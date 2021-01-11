@@ -1,0 +1,16 @@
+public:
+  bind:
+    address: '::'
+
+  services:
+    jenkins:
+      # This needs to be the public domain used to access Jenkins since users will copy/paste that
+      # into Shields. Setting it to `http://jenkins:8080` will work as long as the user pastes a build job link using
+      # that domain.
+      # Example job url: http://jenkins:8080/job/testing-pipe/
+      authorizedOrigins: ['http://jenkins:8080', 'http://jenkins2:8080']
+
+private:
+  jenkins_user: root
+  jenkins_pass: password
+
